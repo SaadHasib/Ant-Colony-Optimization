@@ -72,8 +72,11 @@ def ants_move(space, pos, inv_distance, pheromones, alpha, beta, del_tau):
         # For each ant
         for ant in range(pos.shape[0]):
             # Probability to travel to nodes
-            next_loc_prob = ((inv_distance[pos[ant]] ** alpha) * (pheromones[pos[ant]] ** beta) /
-                             (inv_distance[pos[ant]].sum() ** alpha) * (pheromones[pos[ant]].sum() ** beta))
+            next_loc_prob = (
+                (inv_distance[pos[ant]] ** alpha) * (pheromones[pos[ant]] ** beta) /
+                (inv_distance[pos[ant]].sum() ** alpha) *
+                (pheromones[pos[ant]].sum() ** beta)
+            )
             # Index to maximum probability node
             next_pos = np.argwhere(
                 next_loc_prob == np.amax(next_loc_prob))[0][0]
