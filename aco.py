@@ -116,7 +116,7 @@ def run_aco(space, iters=50, colony=25, alpha=1.0, beta=1.0, del_tau=0.5, rho=0.
     min_distance = None
     min_path = None
     # For the number of iterations
-    for i in range(iters):
+    for _ in range(iters):
         # GEnerate initial random positions
         init_pos = init_ants(space, colony)
         # Complete a path
