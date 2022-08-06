@@ -113,7 +113,7 @@ def run_aco(space, iters=50, colony=25, alpha=1.0, beta=1.0, del_tau=0.5, rho=0.
 
     # Find inverted distances for all the nodes in space
     inv_distance = find_inv_distance(space, beta)
-    # Empty holder for pheromones
+    # Initialize pheromones randomly
     pheromones = np.random.rand(space.shape[0], space.shape[0])
     # Empty holder for minimum distance and path
     min_distance = None
@@ -154,7 +154,7 @@ def main():
     # Rearrange data
     space = np.swapaxes(space, 0, 1)
     # Run ACO and find minimum distance and path
-    min_path, min_distance = run_aco(space, 1, 1, 1, 1, 1, 0.5)
+    min_path, min_distance = run_aco(space, 100, 25, 1, 0.5, 1, 0.5)
     # Print minimum distance
     print("Minimum distance is: {} (Euclidean)".format(min_distance))
     # Place the data nodes
