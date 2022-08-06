@@ -147,8 +147,7 @@ def run_aco(space, iters=50, colony=25, alpha=1.0, beta=1.0, del_tau=0.5, rho=0.
 
 def main():
     # Read CSV data file
-    post_off_data = pandas.read_csv(
-        "/home/buntu/WORK/Python/work_demo/ACO/post_offices.csv")
+    post_off_data = pandas.read_csv("post_offices.csv")
     # Create array of latitude and longitude
     space = np.array([post_off_data.values[:, 6],
                      post_off_data.values[:, 7]], dtype=np.float_)
